@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 
 
 /* General styles */
@@ -13,7 +14,7 @@
 body,
 html {
   height: 100%;
-  background-color: #fff8de;
+  background-color: #f0eec0;
 }
 
 
@@ -37,7 +38,7 @@ html {
 
 .scrolling-logo > a {
   text-decoration: none;
-  color: black;
+  color: #1a2330;
   animation: animate_logo 40s linear infinite;
 }
 
@@ -48,7 +49,7 @@ html {
 /* Header - mobile styles */
 @media screen and (min-width: 320px) and (max-width: 575px) {
   .scrolling-logo > a {
-    font-size: 20px;
+    font-size: 50px;
   }
 }
 
@@ -66,3 +67,94 @@ html {
     margin: 0 180px;
   }
 }
+
+/* Navbar - common styles */
+
+.navbar-menu {
+  display: flex;
+  padding: 10px;
+  margin: 20px 0px;
+  background-color:#1a2330;
+}
+
+/* Navbar - Mobile styles */
+@media screen and (min-width: 320px) and (max-width: 575px) {
+
+  #navbar-desktop {
+    display: none;
+  }
+
+  .navbar-mobile-sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Initially off-screen to the left */
+    width: 100%;
+    height: 100%;
+    background-color: #1a2330;
+    transition: left 0.5s ease; /* Smooth transition effect */
+    display: flex;
+    flex-direction: column; /* Display links as a column */
+    align-items: center; /* Center links horizontally */
+    justify-content: flex-start; /* Center links vertically */
+  }
+
+  .sidebar-logo {
+    display: block;
+  }
+
+
+  .navbar-mobile-sidebar.active {
+    left: 0; /* Slide in when active class is present */
+  }
+
+  .nav-toggle, .nav-hide {
+    color: #f0eec0;
+  }
+
+  .nav-hide {
+    margin: 50px 0 50px 300px;
+  }
+
+  .navbar-mobile-sidebar nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Ensure the links take up the full width */
+  }
+
+  .navbar-mobile-sidebar nav a {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    margin: 10px 0; /* Add margin between links for spacing */
+    text-align: center; /* Center text within each link */
+    color: #f0eec0;
+    text-decoration: none;
+    transition: padding 0.5s ease;
+  }
+
+  .navbar-mobile-sidebar nav a:hover:not(.active) { 
+    padding: 10px 100px;
+    border-radius: 5px;
+    color: #1a2330;
+    background-color: #f0eec0;
+    text-decoration: none;
+  }
+}
+
+/* Navbar - Desktop styles */
+@media screen and (min-width: 769px) {
+  .scrolling-logo > a {
+  font-size: 100px;
+  }
+  .scrolling-text > span {
+    margin: 0 180px;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+}
+
+/*  */
+
