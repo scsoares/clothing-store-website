@@ -7,6 +7,9 @@ function initialize() {
 
   // Add an event listener for scroll to trigger the animation
   document.addEventListener('scroll', handleScroll);
+
+  const ARROW_CAROUSEL = document.querySelector(".arrow-carousel");
+  ARROW_CAROUSEL.addEventListener("click", scrollToNextMobile);
 }
 
 const NAVBAR_MOBILE = document.querySelector(".navbar-mobile-sidebar");
@@ -32,5 +35,13 @@ function handleScroll() {
     newArrivals.classList.add("animate-out");
   }
 }
+
+function scrollToNextMobile() {
+  const carouselContainer = document.querySelector('.carousel-container');
+  const itemWidth = carouselContainer.clientWidth + 20; // Consider the gap between items
+  carouselContainer.scrollLeft += itemWidth;
+}
+
+
 
 initialize();
