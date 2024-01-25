@@ -42,6 +42,19 @@ function scrollToNextMobile() {
   carouselContainer.scrollLeft += itemWidth;
 }
 
+// Catalogue animation
+document.addEventListener('DOMContentLoaded', function () {
+  const CATALOGUE_CONTAINER = document.querySelector('.catalogue-container');
+
+  window.addEventListener('scroll', function () {
+    const scrollPosition = window.scrollY;
+    const elementPosition = CATALOGUE_CONTAINER.offsetTop;
+
+    if (scrollPosition + window.innerHeight > elementPosition + 50) {
+      CATALOGUE_CONTAINER.classList.add('visible');
+    }
+  });
+});
 
 
 initialize();
