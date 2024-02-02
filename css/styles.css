@@ -459,42 +459,35 @@ body::before {
     margin-top: 20px;
   }
 
-  @keyframes new_arrivals_in {
-    from {
-      margin-left: 400px;
-    }
-    to {
-      margin-left: 10px;
-    }
-  }
 
-  @keyframes new_arrivals_out {
-    from {
-      margin-left: 10px;
-    }
-    to {
-      margin-left: 400px;
-    }
-  }
+
 
   .new-arrivals {
     margin-top: 50px;
-    margin-left: 10px;
+    margin-left: 0px;
     margin-right: 5px;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
     overflow: auto;
     display: flex;
     gap: 50px;
     flex-wrap: nowrap;
     scroll-snap-type: x mandatory;
+    opacity: 0;
+    transform: translateX(0%);
+    transition: opacity 0.5s, transform 0.5s;
   }
 
-  .animate-in {
+  /* .animate-in {
     animation: new_arrivals_in 1s linear;
   }
 
   .animate-out {
     animation: new_arrivals_out 1s linear;
+  } */
+
+  .visible1 {
+    opacity: 1;
+    transform: translateX(0%);
   }
 
   .item-image {
@@ -558,30 +551,32 @@ body::before {
   }
 
   .catalogue-container {
+    display: block;
+    margin: 5px auto;
     opacity: 0;
     transform: translateX(-100%);
-    transition: opacity 0.5s, transform 0.5s;
+    transition: opacity 0.5s, transform 0.5s; 
   }
 
-  .needs-span-1 {
+
+  .needs-span span:nth-child(1) {
+    margin: 5px 110px;
+    display: block;
     font-family: myFont2;
-    display: block;
     font-size: 3rem;
-    margin: 5px auto;
   }
 
-  .needs-span-2 {
-    font-family: myFont;
+  .needs-span span:nth-child(2) {
+    margin: 5px 35px;
     display: block;
-    font-size: 1rem;
-    font-weight: 800;
-    margin: 5px auto;
+    font-family: myFont2;
+    font-size: 3rem;
   }
 
-  .visible {
+  .visible2 {
     opacity: 1;
     transform: translateX(0%);
-  }
+  } 
 
   #catalogue-button {
     appearance: none;

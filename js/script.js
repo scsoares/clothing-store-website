@@ -5,9 +5,6 @@ function initialize() {
   const NAV_HIDE = document.querySelector(".nav-hide");
   NAV_HIDE.addEventListener("click", hideNavbarMobile);
 
-  // Add an event listener for scroll to trigger the animation
-  document.addEventListener('scroll', handleScroll);
-
   const ARROW_CAROUSEL = document.querySelector(".arrow-carousel");
   ARROW_CAROUSEL.addEventListener("click", scrollToNextMobile);
 }
@@ -23,24 +20,20 @@ function hideNavbarMobile() {
   NAVBAR_MOBILE.classList.remove("active");
 }
 
-// Handle scroll to trigger the animation for new arrivals
-function handleScroll() {
-  const newArrivals = document.querySelector('.new-arrivals');
-  const scrollPosition = window.scrollY;
+// New arrivals animation
+document.addEventListener('DOMContentLoaded', function () {
+  const NEW_ARRIVALS = document.querySelector('.new-arrivals');
 
-  // Adjust the threshold as needed
-  if (scrollPosition < newArrivals.offsetTop) {
-    newArrivals.classList.add("animate-in");
-  } else {
-    newArrivals.classList.add("animate-out");
-  }
-}
+  window.addEventListener('scroll', function () {
+    const scrollPosition = window.scrollY;
+    const elementPosition = NEW_ARRIVALS.offsetTop;
 
-function scrollToNextMobile() {
-  const carouselContainer = document.querySelector('.carousel-container');
-  const itemWidth = carouselContainer.clientWidth + 20; // Consider the gap between items
-  carouselContainer.scrollLeft += itemWidth;
-}
+    if (scrollPosition + window.innerHeight > elementPosition + 50) {
+      NEW_ARRIVALS.classList.add('visible1');
+    }
+  });
+});
+
 
 // Catalogue animation
 document.addEventListener('DOMContentLoaded', function () {
@@ -51,10 +44,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const elementPosition = CATALOGUE_CONTAINER.offsetTop;
 
     if (scrollPosition + window.innerHeight > elementPosition + 50) {
-      CATALOGUE_CONTAINER.classList.add('visible');
+      CATALOGUE_CONTAINER.classList.add('visible2');
     }
   });
 });
 
+function scrollToNextMobile() {
+  const carouselContainer = document.querySelector('.carousel-container');
+  const itemWidth = carouselContainer.clientWidth + 20; // Consider the gap between items
+  carouselContainer.scrollLeft += itemWidth;
+}
 
 initialize();
