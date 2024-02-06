@@ -29,7 +29,7 @@ html {
   background-color: #f0eec0;
 }
 
-body::before {
+body::after {
   content: "";
   position: fixed;
   top: 0;
