@@ -35,6 +35,21 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+// New arrivals animation
+document.addEventListener('DOMContentLoaded', function () {
+  const TRENDING_NOW = document.querySelector('.trending-now');
+
+  window.addEventListener('scroll', function () {
+    const scrollPosition = window.scrollY;
+    const elementPosition = TRENDING_NOW.offsetTop;
+
+    if (scrollPosition + window.innerHeight > elementPosition + 50) {
+      TRENDING_NOW.classList.add('visible3');
+    }
+  });
+});
+
+
 // Catalogue animation
 document.addEventListener('DOMContentLoaded', function () {
   const CATALOGUE_CONTAINER = document.querySelector('.catalogue-container');
