@@ -7,6 +7,9 @@ function initialize() {
 
   const ARROW_CAROUSEL = document.querySelector(".arrow-carousel");
   ARROW_CAROUSEL.addEventListener("click", scrollToNextMobile);
+
+  const FORM_SELECT = document.getElementById('form');
+  FORM_SELECT.addEventListener('submit', formValidation);
 }
 
 const NAVBAR_MOBILE = document.querySelector(".navbar-mobile-sidebar");
@@ -68,6 +71,38 @@ function scrollToNextMobile() {
   const carouselContainer = document.querySelector('.carousel-container');
   const itemWidth = carouselContainer.clientWidth + 40; // Consider the gap between items
   carouselContainer.scrollLeft += itemWidth;
+}
+
+// Form validation
+function formValidation(event) {
+  event.preventDefault();
+
+  const ERROR_MESSAGES = document.getElementsByClassName('error-message');
+  for (let i = 0; i < ERROR_MESSAGES.length; i++) {
+    ERROR_MESSAGES[i].style.display = 'block';
+    ERROR_MESSAGES[i].style.color = 'red';
+  }
+
+  const FIRST_NAME = event.target.first_name.value;
+  const LAST_NAME = event.target.last_name.value;
+  const EMAIL = event.target.email.value;
+
+
+  const errorsToShow = [];
+
+
+  if(FIRST_NAME == "") {
+    errorsToShow.push('error-first-name');
+  }
+
+  if(LAST_NAME == "") {
+    errorsToShow.push('error-last-name');
+  }
+
+  if(EMAIL == "") {
+    errorsToShow.push('error-email');
+  }
+
 }
 
 initialize();
