@@ -749,7 +749,6 @@ body::after {
     gap: 10px;
     background-image: url('texture-one.png');
     background-repeat: repeat;
-    border-bottom: 2px solid #1a2330;
     padding-bottom: 0px;
   }
 
@@ -791,7 +790,7 @@ body::after {
   }
 
   .hand-container {
-    height: 350px;
+    height: 300px;
   }
 
   .hand-container img {
