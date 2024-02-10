@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function scrollToNextMobile() {
   const carouselContainer = document.querySelector('.carousel-container');
-  const itemWidth = carouselContainer.clientWidth + 20; // Consider the gap between items
+  const itemWidth = carouselContainer.clientWidth + 40; // Consider the gap between items
   carouselContainer.scrollLeft += itemWidth;
 }
 

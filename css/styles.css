@@ -367,7 +367,7 @@ body::after {
     scroll-snap-align: center;
   }
 
-  .carousel-container > .carousel-item:nth-child(3) {
+  .carousel-container > .carousel-item:nth-child(7) {
     margin-right: 20px;
   }
 
