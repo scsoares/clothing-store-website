@@ -383,13 +383,42 @@ body::after {
     object-fit: cover;
   }
 
+  .sales-text-1 {
+    position: absolute;
+    overflow: hidden;
+    top: 55%;
+    left: 71%; /* Center the element horizontally */
+    color:#fff;
+    font-size: 1rem;
+    text-wrap: wrap;
+}
+
+  .sales-text-2 {
+    position: absolute;
+    overflow: hidden;
+    top: 56%;
+    left: 71%; /* Center the element horizontally */
+    color:#fff;
+    font-size: 1.8rem;
+    text-wrap: wrap;
+}
+
+  @keyframes rotation_star {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
   .star-sales {
     position: absolute;
     overflow: hidden;
-    top: 45%;
-    left: 60%;
-    width: 50%;
-    color:#f47a45;
+    top: 51%;
+    left: 62%; /* Center the element horizontally */
+    max-width: 30%; /* Set a maximum width to prevent excessive width */
+    animation: rotation_star 10s infinite linear;
   }
 
   .hero-section-title {
@@ -482,7 +511,7 @@ body::after {
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 60px;
-    overflow: auto;
+    overflow:scroll;
     display: flex;
     gap: 50px;
     flex-wrap: nowrap;
